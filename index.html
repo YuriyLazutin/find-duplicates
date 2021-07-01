@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <meta http-equiv="content-type" content="text/html">
+    <meta name="author" content="Yuriy Lazutin" >
+    <meta name="description" content="find-duplicates - documentation">
+    <meta name="keywords" content="Yuriy Lazutin, find-duplicates">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="Global">
+<!--
+    <meta name="robots" content="index,follow">
+-->
+    <title>find-duplicates - find duplicate files into specific directory</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+
+  <body
+    bgproperties="fixed"
+    onload="window.defaultStatus='find-duplicates - find duplicate files into specific directory'"
+    alink="#48298C"
+    link="#48298C"
+    vlink="#780078"
+    style="width: 100%; height: 100%;"
+  >
+
+    <header>
+      <table class="pghead" border=0>
+        <tr>
+          <td style="width: 5%;"></td>
+          <td align="center"><H1>FIND-DUPLICATES</H1><font style="font-size: 1.5em; letter-spacing: 2px;">find duplicate files into specific directory</font><br><br></td>
+          <td style="width: 5%;"></td>
+        </tr>
+      </table>
+    </header>
+
+    <br><br>
+
+    <!-- Central -->
+    <table class="tb">
+      <tr>
+        <td style="width: 10%;"></td>
+        <td valign="top" style="width: 68%; border-radius: 10px 10px; border: 1px solid black; padding: 20px;">
+          <H2>Introduction</H2>
+          <p><span class="letter" style="font-size: 1.2em;">FIND-DUPLICATES</span> - this is a simple console tool which will find duplicate files into specified directory.
+          Additionally it have a small set of options which can be provided via command line and allow you to customize it behavior.
+          </p>
+          <p>Files are considered duplicates if:
+            <ol>
+              <li>They are the same size;</li>
+              <li>They have the same checksum;</li>
+              <li>They have the same content.</li>
+            </ol>
+            By default, the program will recursively scan the specified directory and search for files of the same size and with the same checksum.
+            This is the fastest way to find duplicates and can be used in many cases.
+            But with a very small probability it may occurs that unequal files will be accepted as duplicates (If it will have the same size and checksum).
+            If you are analyzing important data and you need to make sure that the files are really duplicated,
+            you can specify an additional option and then the program will perform an additional step and compare the candidates in pairs.
+            Pairwise comparisons can take significantly much time, so you should keep that in mind.
+          </p>
+          <p><span class="letter" style="font-size: 1.2em;">FIND-DUPLICATES</span> - this is free and open source program. So you can freely use and modify it at your discretion.
+          But at the same time, the author does not give any guarantees for the operation of this program and does not bear any responsibility for its possible use.
+          This program is licensed under "GNU GENERAL PUBLIC LICENSE Version 3" which you can find in the root program directory.</p>
+          <H2>Installation</H2>
+          <p>You can look at the following sections to find out how to download and install the program, and what you should have on your system.</p>
+          <a href="doc/system-requirements.html">System requirements</a><br>
+          <a href="doc/installation.html">Installation steps</a><br>
+          <br>
+          <H2>Application</H2>
+          <p>The default use of the program is simple - just enter its name and the directory to be scanned:</p>
+          <code>
+            <br>
+            &nbsp; find-duplicates /path/to/directory<br>
+            <br>
+            &nbsp; ToDo: Here should be program output sample<br>
+            <br>
+          </code>
+
+          <p>For a guaranteed comparison, add the option -c</p>
+          <code>
+            <br>
+            &nbsp; find-duplicates -c /path/to/directory<br>
+            <br>
+            &nbsp; ToDo: Here should be program output sample<br>
+            <br>
+          </code>
+
+          <p>Additionally find-duplicates supports the following options:</p>
+
+            <table class="topt">
+              <tr><th style="width: 10%;">Short</th><th style="width: 20%;">Long</th><th>Description</th></tr>
+              <tr><td align="center">-h</td><td>--help</td><td>Will show help and exit</td></tr>
+              <tr><td align="center">-v</td><td>--verbose</td><td>The program will show extended messages</td></tr>
+              <tr><td align="center">-c</td><td>--compare</td><td>Duplicate candidates will be compared pairwise</td></tr>
+            </table>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </td>
+        <td style="width: 10%;"></td>
+      </tr>
+    </table>
+
+  </body>
+</html>
