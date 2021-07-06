@@ -13,3 +13,13 @@ find-duplicates
 *.css~
 *.html~
 *.text~
+
+# Project Files
+Debug
+Release
+Profile
+find-duplicates.pro
+find-duplicates.pro.user
+
+# Log files
+find-duplicates.log
