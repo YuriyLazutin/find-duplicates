@@ -1,38 +1,13 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <getopt.h>
 #include <fcntl.h>
 #include <dirent.h>
 #include <sys/stat.h>
-#include <string.h>
+#include <cstring>
 #include <unistd.h>
-
-class file_item
-{
-  int size;
-  char md5hash[32];
-  char* path;
-
-public:
-  file_item(const int p_size, const char* p_md5hash, const char* p_path);
-  ~file_item();
-};
-
-file_item::file_item(const int p_size, const char* p_md5hash, const char* p_path)
-{
-  size = p_size;
-  memcpy(md5hash, p_md5hash, 32);
-  int path_len = strlen(p_path);
-  path = (char*)malloc((path_len + 1) * sizeof(char));
-  for (int i=0; i < path_len + 1; i++)
-    path[i] = p_path[i];
-  //strncpy(entry_path, dir_path, sizeof(entry_path));
-}
-
-file_item::~file_item()
-{
-  free (path);
-}
+#include "file_item.h"
+#include "file_item_ext.h"
 
 void scan_directory(const char* p_dir_path, const int p_fd);
 
