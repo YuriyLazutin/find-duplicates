@@ -1,6 +1,8 @@
 #ifndef FILE_ITEM_H
 #define FILE_ITEM_H
 
+#include <ostream>
+
 class file_item
 {
   protected:
@@ -16,6 +18,9 @@ class file_item
     int operator==(const file_item &obj) { return size == obj.size; };
     int operator>(const file_item &obj) { return size > obj.size; };
     int operator<(const file_item &obj) { return size < obj.size; };
+    friend std::ostream& operator<<(std::ostream &os, const file_item &obj);
 };
+
+std::ostream& operator<<(std::ostream &os, const file_item &obj);
 
 #endif // FILE_ITEM_H

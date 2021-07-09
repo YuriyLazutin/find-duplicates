@@ -1,6 +1,7 @@
 #ifndef FILE_ITEM_EXT_H
 #define FILE_ITEM_EXT_H
 
+#include <ostream>
 #include "file_item.h"
 
 class file_item_ext: protected file_item
@@ -15,6 +16,9 @@ class file_item_ext: protected file_item
     int operator==(const file_item_ext &obj);
     int operator>(const file_item_ext &obj);
     int operator<(const file_item_ext &obj);
+    friend std::ostream& operator<<(std::ostream &os, const file_item_ext &obj);
 };
+
+std::ostream& operator<<(std::ostream &os, const file_item_ext &obj);
 
 #endif // FILE_ITEM_EXT_H

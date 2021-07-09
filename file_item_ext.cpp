@@ -54,3 +54,9 @@ int file_item_ext::operator<(const file_item_ext &obj)
     return true;
   return false;
 };
+
+std::ostream& operator<<(std::ostream &os, const file_item_ext &obj)
+{
+  os << obj.size << ' ' << obj.path << '\n';
+  return os;
+};

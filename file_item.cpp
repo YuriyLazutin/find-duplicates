@@ -55,3 +55,9 @@ file_item &file_item::operator=(const file_item &obj)
 
   return *this;
 }
+
+std::ostream& operator<<(std::ostream &os, const file_item &obj)
+{
+  os << obj.size << ' ' << obj.path << '\n';
+  return os;
+};
