@@ -10,17 +10,17 @@ class file_item
     char* path;
 
   public:
-    file_item() { size = 0; path = nullptr; };
-    file_item(const int p_size, const char* p_path);
-    file_item(const file_item &obj);
+    explicit file_item() { size = 0; path = nullptr; };
+    explicit file_item(const int p_size, const char* p_path);
+    explicit file_item(const file_item &obj);
     ~file_item();
-    file_item &operator=(const file_item &obj);
-    int operator==(const file_item &obj) { return size == obj.size; };
-    int operator>(const file_item &obj) { return size > obj.size; };
-    int operator<(const file_item &obj) { return size < obj.size; };
-    friend std::ostream& operator<<(std::ostream &os, const file_item &obj);
+    file_item& operator = (const file_item &obj);
+    int operator == (const file_item &obj) const { return size == obj.size; };
+    int operator > (const file_item &obj) const { return size > obj.size; };
+    int operator < (const file_item &obj) const { return size < obj.size; };
+    friend std::ostream& operator << (std::ostream &os, const file_item &obj);
 };
 
-std::ostream& operator<<(std::ostream &os, const file_item &obj);
+std::ostream& operator << (std::ostream &os, const file_item &obj);
 
 #endif // FILE_ITEM_H
